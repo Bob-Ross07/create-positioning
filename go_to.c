@@ -11,6 +11,9 @@ double conversion = 10/1024;
 int timeInterval = 10;
 double oldGyro;
 
+int lspeed = 700;
+int rspeed = 700;
+
 int findBias(){
 	//Stop the motors to make bot stand still
 	ao();
@@ -82,14 +85,14 @@ int findAngle(int time) {
   int i = 0;
   int currentGyro = oldGyro;
   while (i < time) {
-    angle 
+    int newGyro = oldGyro;
+    newGyro = readGyro();  
+    angle += 0.5*(newGyro-oldGyro)*timeInterval/1000 + oldGyro * timeInterval/1000;
   }
 }
 
 void goTo(int x, int y, int angle) {
-  if(posX < x) {
-    
-  }
+  
 }
  
 int main(){
