@@ -16,5 +16,7 @@ int high;
 
 //drive forward a given distance while setting up the arm to grab cube/botgal
 void forward(int distance) {
-  
+  while(get_create_total_distance() < distance*10) {
+
+}
 }
